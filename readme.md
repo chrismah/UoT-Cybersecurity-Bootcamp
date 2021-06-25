@@ -128,12 +128,21 @@ SSH into the control node and follow the steps below:
 git clone https://github.com/chrismah/UoT-Cybersecurity-Bootcamp-Project.git
 ```
 
-- Copy the install-elk.yml file (located in ansible directory) to /etc/ansible.
-- Update the /etc/ansible/hosts file to include IP Addresses for target machines. You can also specify groups using [] for tags as shown in the example below
+- Copy the install-elk.yaml file (located in ansible directory) to /etc/ansible.
+```
+cp ./UoT-Cybersecurity-Bootcamp-Project/ansible/install-elk.yml /etc/ansible
+```
 
+- Update the /etc/ansible/hosts file to include IP Addresses for target machines. You can also specify groups using [] for tags as shown in the example below
+```
+nano /etc/ansible/hosts
+```
 ```
 [elk]
 10.2.0.5 ansible_python_interpreter=/usr/bin/python3
 ```
 
 - Run the playbook, and navigate to http://localhost:5601 to check that the installation worked as expected.
+```
+ansible-playbook /etc/ansible/install-elk.yaml
+```
