@@ -6,12 +6,12 @@
     - name: Download Metricbeat
       command: "{{item}}"
       with_items:
-        - curl -O "https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb"
+        - curl -L -O "https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb"
         - dpkg -i "metricbeat-7.4.0-amd64.deb"
 
     - name: Copy configuration file
       copy:
-        src: /etc/ansible/metricbeat-config.yml
+        src: /etc/ansible/metricbeat-config.yaml
         dest: /etc/metricbeat/metricbeat.yml
         mode: go-w
 

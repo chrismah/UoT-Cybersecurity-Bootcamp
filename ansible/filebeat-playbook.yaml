@@ -6,7 +6,7 @@
     - name: Download Filebeat
       command: "{{item}}"
       with_items:
-        - curl -O "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb"
+        - curl -L -O "https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb"
         - dpkg -i filebeat-7.4.0-amd64.deb
 
     - name: Copy configuration file
