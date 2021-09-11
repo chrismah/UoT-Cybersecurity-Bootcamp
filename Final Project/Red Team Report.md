@@ -42,6 +42,7 @@ First we enumerated the user accounts by exploiting the vulnerable WordPress sit
 ```
 $ wpscan --url http://192.168.1.110/wordpress -e u
 ```
+![wpscan](images/user_enumeration.png)
 ```
 $ msfconsole
 ```
