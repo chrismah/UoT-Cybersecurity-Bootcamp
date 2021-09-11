@@ -16,11 +16,11 @@ The following machines were identified on the network:
   - **Purpose**: Attacker Machine
   - **IP Address**: 192.168.1.90
 - ELK
-  - **Operating System**: Ubuntu 18.04.4 LTS
+  - **Operating System**: Ubuntu 18.04 LTS
   - **Purpose**: Monitoring System
   - **IP Address**: 192.168.1.100
 - Capstone
-  - **Operating System**: Ubuntu (18.04 LTS)
+  - **Operating System**: Ubuntu 18.04 LTS
   - **Purpose**: Apache Web Server (Victim)
   - **IP Address**: 192.168.1.105
 - Target 1
