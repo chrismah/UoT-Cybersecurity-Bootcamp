@@ -80,7 +80,7 @@ $ ssh michael@192.168.1.110
 ```
 $ grep -rnw / -e “flag1” 2> /dev/null
 ```
-![flag1](images/flag1.png)
+![flag1](images/flag1z.png)
 
 -----
 ### `flag2`: fc3fd58dcdad9ab23faca6e9a3e581c
