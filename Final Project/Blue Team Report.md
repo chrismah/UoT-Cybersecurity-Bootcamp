@@ -54,7 +54,7 @@ Excessive HTTP Errors is implemented as follows:
 HTTP Request Size Monitor is implemented as follows:
   - **Metric**: `WHEN sum() of http.request.bytes OVER all documents IS ABOVE 3500 FOR THE LAST 1 minute`
   - **Threshold**: Above 3500
-  - **Vulnerability Mitigated**: HTTP Header Injection
+  - **Vulnerability Mitigated**: HTTP Request Smuggling
   - **Reliability**: Low Reliability - false positives are possible since there can be legitimate larger requests
 
 ### CPU Usage Monitor
@@ -79,12 +79,8 @@ The logs and alerts generated during the assessment suggest that this network is
     - A brute force attack requires a target. If the attacker cannot find the login page then the attack cannot begin
     - Added Two-factor Authentication would add an additional layer of security that an attacker would have low chance of bypassing
     - Limiting the login attempts by IP would prevent any tools from attempting a brute force attack because the IP would not be allowed to submit more than the set number of attempts
-- HTTP Header Injection
-  - **Patch**: 
-  - **Why It Works**: 
-- Misconfiguration of user privileges leading to privilege escalation
-  - **Patch**: Remove sudo privilegs to `/usr/bin/python`
-    - ![steven_priv](images/steven_priv.png)
-  - **Why It Works**: Escalation to `root` was possible via the use of python. Removing sudo access to python would block the ability for pty.spawn() to start a new shell as root.
-
+- Malicious Processes
+  - **Patch**: System Hardening
+    - Add security and monitoring software to system, such as: Anti-Virus, Host Based Intrusion Detection System or Endpoint Detection and Reponse software 
+  - **Why It Works**: These softwares can detect, notify and prevent malicious processes running on a system
 
