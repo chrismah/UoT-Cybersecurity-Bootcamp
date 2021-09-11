@@ -25,7 +25,9 @@ You must inspect your traffic capture to answer the following questions in your 
     ![na_3](images/na_3.png)
   
 4. Upload the file to [VirusTotal.com](https://www.virustotal.com/gui/). 
+
   ![na_4](images/na_4.png)
+  
 5. What kind of malware is this classified as?
   - The malware is most likely a Trojan
   
