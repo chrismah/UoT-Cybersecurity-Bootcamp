@@ -21,7 +21,9 @@ You must inspect your traffic capture to answer the following questions in your 
   - Once you have found the file, export it to your Kali machine's desktop.
     - **Filter:** `ip.src==10.6.12.203 && http.request.method==GET`
     - **File:** `june11.dll`
+    
     ![na_3](images/na_3.png)
+  
 4. Upload the file to [VirusTotal.com](https://www.virustotal.com/gui/). 
   ![na_4](images/na_4.png)
 5. What kind of malware is this classified as?
