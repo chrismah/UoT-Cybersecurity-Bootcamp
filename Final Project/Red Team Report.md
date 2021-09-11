@@ -3,7 +3,7 @@
 - Exposed Services
 - Exploitation
 
-### Exposed Services
+## Exposed Services
 Nmap scan results for each machine reveal the below services and OS details:
 
 ```
@@ -27,10 +27,10 @@ The following vulnerabilities were identified on each target:
   - Unsalted user password hashes in WordPress database
   - Misconfiguration of user privileges leading to privilege escalation
 
-### Exploitation
+## Exploitation
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
 
------
+------
 ### `flag1`: b9bbcb33ellb80be759c4e844862482d
 
 #### Exploits Used 
@@ -96,6 +96,8 @@ $ find / -iname “flag2*” 2> /dev/null
 ```
 cat /var/www/flag2.txt
 ```
+![flag2](images/flag2.png)
+
 -----
 ### `flag3`: afc01ab56b50591e7dccf93122770cd2
 
@@ -106,14 +108,16 @@ cat /var/www/flag2.txt
 ```
 $ cat /var/www/html/wordpress/wp-config.php
 ```
+![wp_config](images/wp_config.png)
 ```
 $ mysqldump wordpress -u root -pR@v3nSecurity > dump
 ```
 ```
 $ grep “flag3” dump
 ```
+![flag4](images/flag3z.png)
 
-Note: flag4 was found here in addition to the next step
+> Note: flag4 was found here in addition to the next step
 
 -----
 ### `flag4`: 715dea6c055b9fe3337544932f2941ce
