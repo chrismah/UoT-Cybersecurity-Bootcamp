@@ -28,6 +28,7 @@ You must inspect your traffic capture to answer the following questions in your 
   ![na_4](images/na_4.png)
 5. What kind of malware is this classified as?
   - The malware is most likely a Trojan
+  
   ![na_5](images/na_5.png)
 
 ## Vulnerable Windows Machines
@@ -53,7 +54,9 @@ Inspect your traffic to answer the following questions in your network report:
 3. What are the IP addresses used in the actual infection traffic?
   - By looking at the top conversations with `172.16.4.205` we can see the following IPs were likely to be infection traffic: `185.243.115.84` `166.62.111.64`
     - **Filter:** `ip.addr==172.16.4.205`
+    
     ![na_8](images/na_8.png)
+    
 4. As a bonus, retrieve the desktop background of the Windows host.
   ![na_9](images/na_9.png)
 
