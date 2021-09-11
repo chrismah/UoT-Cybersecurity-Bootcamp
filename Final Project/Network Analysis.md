@@ -60,7 +60,7 @@ Inspect your traffic to answer the following questions in your network report:
     ![na_8](images/na_8.png)
     
 4. As a bonus, retrieve the desktop background of the Windows host.
-  - **Filter:** ip.src==172.16.4.205 && http.request.method==POST
+  - **Filter:** `ip.src==172.16.4.205 && http.request.method==POST`
   ![na_9](images/na_9.png)
 
 ## Illegal Downloads
