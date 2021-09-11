@@ -68,14 +68,23 @@ CPU Usage Monitor is implemented as follows:
 
 ## Suggestions for Going Further
 The logs and alerts generated during the assessment suggest that this network is susceptible to several active threats, identified by the alerts above. In addition to watching for occurrences of such threats, the network should be hardened against them. The Blue Team suggests that IT implement the fixes below to protect the network:
-- Weak User Password (`michael`)
-  - **Patch**: Increase complexity of user `michael`'s password
-  - **Why It Works**: The initial attack vector was possible due to `michael`'s simple password which was easily brute forced.
-- Weak user Password (`steven`)
-  - **Patch**: Increase complexity of user `steven`'s password
-  - **Why It Works**: Access to a user account with more privleges is what allowed escalation to root. If `steven`'s password wasn't available in common wordlists, this could have been avoided.
+- Brute Force Attack
+  - **Patch**:
+    - Set stronger password requirements
+    - Hide WordPress login page via security plugin
+    - Two-factor Authentication
+    - Limit login attempts via security plugin
+  - **Why It Works**:
+    - Stronger password requirements make guessing the correct password much harder/longer. In addition not being listed in a readily available wordlist would increase security
+    - A brute force attack requires a target. If the attacker cannot find the login page then the attack cannot begin
+    - Added Two-factor Authentication would add an additional layer of security that an attacker would have low chance of bypassing
+    - Limiting the login attempts by IP would prevent any tools from attempting a brute force attack because the IP would not be allowed to submit more than the set number of attempts
+- HTTP Header Injection
+  - **Patch**: 
+  - **Why It Works**: 
 - Misconfiguration of user privileges leading to privilege escalation
-  - **Patch**: Remove 
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
+  - **Patch**: Remove sudo privilegs to `/usr/bin/python`
+    - ![steven_priv](images/steven_priv.png)
+  - **Why It Works**: Escalation to `root` was possible via the use of python. Removing sudo access to python would block the ability for pty.spawn() to start a new shell as root.
 
 
