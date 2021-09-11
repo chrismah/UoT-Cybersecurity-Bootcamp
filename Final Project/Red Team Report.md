@@ -22,7 +22,6 @@ This scan identifies the services below as potential points of entry:
 
 The following vulnerabilities were identified on each target:
 - Target 1
-  - User enumeration via WordPress site
   - Weak user password
   - Unsalted user password hashes in WordPress database
   - Misconfiguration of user privileges leading to privilege escalation
@@ -34,7 +33,6 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 ### `flag1`: b9bbcb33ellb80be759c4e844862482d
 
 #### Exploits Used 
-  - WPscan to enumerate users on Target 1
   - Brute force attacking a weak password
       
 #### Method
