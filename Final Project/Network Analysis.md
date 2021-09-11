@@ -84,5 +84,6 @@ Your task is to isolate torrent traffic and answer the following questions in yo
   ![na_11](images/na_11.png)
 
 2. Which torrent file did the user download?
+  - The user was trying to download `Betty Boop Rhythm on the Reservation.avi`
   - **Filter:** `ip.src==10.0.0.201 && http.request.uri contains ".torrent"`
   ![na_12](images/na_12.png)
