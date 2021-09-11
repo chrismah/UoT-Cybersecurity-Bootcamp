@@ -112,7 +112,8 @@ cat /var/www/flag2.txt
 $ cat /var/www/html/wordpress/wp-config.php
 ```
 ![wp_config](images/wp_config.png)
-With these credentials we dumped the entire database using the following command
+
+  - With these credentials we dumped the entire database using the following command
 ```
 $ mysqldump wordpress -u root -pR@v3nSecurity > dump
 ```
