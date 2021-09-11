@@ -8,7 +8,7 @@
 - Suggestions for Going Further
 
 ### Network Topology
-
+![topology]("images/Network Topology.png")
 The following machines were identified on the network:
 - Kali
   - **Operating System**: Kali Linux 2020.1
