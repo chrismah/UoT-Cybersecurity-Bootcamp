@@ -123,7 +123,10 @@ $ mysql wordpress --user=root -pR@v3nSecurity
 >  select * from wp_users;
 ```
 ```
-exit;exit
+exit
+```
+```
+exit
 ```
 ```
 echo "steven:\$P\$Bk3VD9jsxx/loJoqNsURgHiaB23j7W/" > hash.txt
