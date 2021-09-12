@@ -25,7 +25,6 @@ The following vulnerabilities were identified on each target:
   - Weak user password
   - Unsalted user password hashes in WordPress database
   - Misconfiguration of user privileges leading to privilege escalation
-  - 
 
 ## Exploitation
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
