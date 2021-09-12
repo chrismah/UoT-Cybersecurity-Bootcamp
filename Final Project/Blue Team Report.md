@@ -65,6 +65,7 @@ CPU Usage Monitor is implemented as follows:
 Monitoring of traffic and alerts was conducted during the Red Team activities.
 
 - Enumeration with WPScan
+
   A spike in traffic to `Target 1` was noted. 
   ![blue1q](images/blue1q.png)
   ![blue1](images/blue1.png)
@@ -72,6 +73,7 @@ Monitoring of traffic and alerts was conducted during the Red Team activities.
     ![blue1alert](images/blue1alert.png)
 
 - SSH Brute Forcing
+
   Monitoring on the /var/log/auth.log file shows increased login failures.
   ![blue2q](images/blue2q.png)
   ![blue2](images/blue2.png)
