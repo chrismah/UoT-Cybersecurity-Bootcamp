@@ -33,13 +33,11 @@ The following machines were identified on the network:
   - **IP Address**: 192.168.1.115
 
 ## Description of Targets
-
 The target of this attack was: `Target 1` (192.168.1.110).
 
 Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are possible ports of entry for attackers. As such, the following alerts have been implemented:
 
 ## Monitoring the Targets
-
 Traffic to these services should be carefully monitored. To this end, we have implemented the alerts below:
 
 ### Excessive HTTP Errors
@@ -63,7 +61,21 @@ CPU Usage Monitor is implemented as follows:
   - **Vulnerability Mitigated**: Malicious processes running on the machine (malware, spyware, viruses)
   - **Reliability**: High Reliability - the increased CPU activity over baseline should alert to potential problems
 
+## Patterns of Traffic & Behavior
+Monitoring of traffic and alerts was conducted during the Red Team activities.
 
+- Enumeration with WPScan
+  A spike in traffic to `Target 1` was noted. 
+  ![blue1q](images/blue1q.png)
+  ![blue1](images/blue1.png)
+  - This traffic triggered two alerts: Excessive HTTP Errors and HTTP Request Size Monitor. 
+    ![blue1alert](images/blue1alert.png)
+
+- SSH Brute Forcing
+  Monitoring on the /var/log/auth.log file shows increased login failures.
+  ![blue2q](images/blue2q.png)
+  ![blue2](images/blue2.png)
+  ![blue2g](images/blue2g.png)
 
 ## Suggestions for Going Further
 The logs and alerts generated during the assessment suggest that this network is susceptible to several active threats, identified by the alerts above. In addition to watching for occurrences of such threats, the network should be hardened against them. The Blue Team suggests that IT implement the fixes below to protect the network:
