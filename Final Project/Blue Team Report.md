@@ -90,11 +90,6 @@ The logs and alerts generated during the assessment suggest that this network is
 - DDoS
   - **Patch**: Disable WordPress XML-RPC (if not in use)
   - **Why It Works**: XML-RPC is responsible for enabling pingbacks and trackbacks, using this feature an attacker could DDoS the website by flooding the site with pingbacks/trackbacks
-  - **Patch**: System Hardening
-    - Add security and monitoring software to system, such as: Anti-Virus, Host Based Intrusion Detection System or Endpoint Detection and Reponse software 
+- Malicious Process
+  - **Patch**: Add security and monitoring software to system, such as: Anti-Virus, Host Based Intrusion Detection System or Endpoint Detection and Reponse software 
   - **Why It Works**: These softwares can detect, notify and prevent malicious processes running on a system
-Malicious Processes
-  - **Patch**: System Hardening
-    - Add security and monitoring software to system, such as: Anti-Virus, Host Based Intrusion Detection System or Endpoint Detection and Reponse software
-  - **Why It Works**: These softwares can detect, notify and prevent malicious processes running on a system
-
