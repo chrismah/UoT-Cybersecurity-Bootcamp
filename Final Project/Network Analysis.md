@@ -12,21 +12,26 @@ You must inspect your traffic capture to answer the following questions in your 
 1. What is the domain name of the users' custom site?
   - `Frank-n-Ted-DC.frank-n-ted.com`
   - **Filter:** `ip.addr==10.6.12.0/24`
-  - ![na_1](images/na_1.png)
+  ![na_1](images/na_1.png)
 2. What is the IP address of the Domain Controller (DC) of the AD network?
   - `10.6.12.12`
   - **Filter:** `ip.addr==10.6.12.0/24 && kerberos.CNameString`
-  - ![na_2](images/na_2.png)
+  ![na_2](images/na_2.png)
 3. What is the name of the malware downloaded to the 10.6.12.203 machine?
   - Once you have found the file, export it to your Kali machine's desktop.
     - **Filter:** `ip.src==10.6.12.203 && http.request.method==GET`
     - **File:** `june11.dll`
-    - ![na_3](images/na_3.png)
+    
+    ![na_3](images/na_3.png)
+  
 4. Upload the file to [VirusTotal.com](https://www.virustotal.com/gui/). 
-  - ![na_4](images/na_4.png)
+
+  ![na_4](images/na_4.png)
+  
 5. What kind of malware is this classified as?
   - The malware is most likely a Trojan
-  - ![na_5](images/na_5.png)
+  
+  ![na_5](images/na_5.png)
 
 ## Vulnerable Windows Machines
 
@@ -43,17 +48,20 @@ Inspect your traffic to answer the following questions in your network report:
     - IP address: `172.16.4.205`
     - MAC address: `00:59:07:b0:63:a4`
   - **Filter:** `ip.dst==172.16.4.0/24 && kerberos.CNameString`
-  - ![na_6](images/na_6.png)
+  ![na_6](images/na_6.png)
     
 2. What is the username of the Windows user whose computer is infected?
   - User: `matthijs.devries`
-  - ![na_7](images/na_7.png)
+  ![na_7](images/na_7.png)
 3. What are the IP addresses used in the actual infection traffic?
   - By looking at the top conversations with `172.16.4.205` we can see the following IPs were likely to be infection traffic: `185.243.115.84` `166.62.111.64`
     - **Filter:** `ip.addr==172.16.4.205`
-    - ![na_8](images/na_8.png)
+    
+    ![na_8](images/na_8.png)
+    
 4. As a bonus, retrieve the desktop background of the Windows host.
-  - ![na_9](images/na_9.png)
+  - **Filter:** `ip.src==172.16.4.205 && http.request.method==POST`
+  ![na_9](images/na_9.png)
 
 ## Illegal Downloads
 
@@ -72,9 +80,10 @@ Your task is to isolate torrent traffic and answer the following questions in yo
     - Windows username: `elmer.blanco`
     - OS version: `Windows 10`
   - **Filter:** `ip.src==10.0.0.201 && kerberos.CNameString`
-  - ![na_10](images/na_10.png)
-  - ![na_11](images/na_11.png)
+  ![na_10](images/na_10.png)
+  ![na_11](images/na_11.png)
 
 2. Which torrent file did the user download?
+  - The user was trying to download `Betty Boop Rhythm on the Reservation.avi`
   - **Filter:** `ip.src==10.0.0.201 && http.request.uri contains ".torrent"`
-  - ![na_12](images/na_12.png)
+  ![na_12](images/na_12.png)

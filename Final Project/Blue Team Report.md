@@ -54,7 +54,7 @@ Excessive HTTP Errors is implemented as follows:
 HTTP Request Size Monitor is implemented as follows:
   - **Metric**: `WHEN sum() of http.request.bytes OVER all documents IS ABOVE 3500 FOR THE LAST 1 minute`
   - **Threshold**: Above 3500
-  - **Vulnerability Mitigated**: HTTP Request Smuggling
+  - **Vulnerability Mitigated**: HTTP Request Smuggling / Enumeration
   - **Reliability**: Low Reliability - false positives are possible since there can be legitimate larger requests
 
 ### CPU Usage Monitor
