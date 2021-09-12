@@ -73,21 +73,23 @@ The logs and alerts generated during the assessment suggest that this network is
     2. Hide WordPress login page via security plugin
     3. Two-factor Authentication
     4. Limit login attempts via security plugin
+    5. Disable WordPress XML-RPC (if not in use)
   - **Why It Works**:
     1. Stronger password requirements make guessing the correct password much harder/longer. In addition not being listed in a readily available wordlist would increase security
     2. A brute force attack requires a target. If the attacker cannot find the login page then the attack cannot begin
     3. Added Two-factor Authentication would add an additional layer of security that an attacker would have low chance of bypassing
     4. Limiting the login attempts by IP would prevent any tools from attempting a brute force attack because the IP would not be allowed to submit more than the set number of attempts
-- Enumeration / DDoS
+    5. XML-RPC allows for users to remotely post, edit or delete content from the site which can be used to brute force login credentials. 
+- Enumeration
   - **Patch**: WordPress Hardening
     1. Disable WordPress REST API (if not in use)
-    2. Disable WordPress XML-RPC (if not in use)
     3. Configure web server to block requests to /?author=\<number\>
   - **Why It Works**:
     1. The REST API included with WordPress allows information to be gathered on all users who have authored a public post 
-    2. XML-RPC allows for users to remotely post, edit or delete content from the site which can be used to brute force login credentials. In addition XML-RPC leaves the site vulnerable to DDoS attacks via pingbacks and trackbacks.
     3. WordPress's permalink feature allows attackers to enumerate users by issuing requests with /?author=\<number\>
-- Malicious Processes
+- DDoS
+  - **Patch**: Disable WordPress XML-RPC (if not in use)
+  - **Why It Works**: XML-RPC is responsible for enabling pingbacks and trackbacks, using this feature an attacker could DDoS the website by flooding the site with pingbacks/trackbacks
   - **Patch**: System Hardening
     - Add security and monitoring software to system, such as: Anti-Virus, Host Based Intrusion Detection System or Endpoint Detection and Reponse software 
   - **Why It Works**: These softwares can detect, notify and prevent malicious processes running on a system
