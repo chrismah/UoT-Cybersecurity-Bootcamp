@@ -93,4 +93,8 @@ The logs and alerts generated during the assessment suggest that this network is
   - **Patch**: System Hardening
     - Add security and monitoring software to system, such as: Anti-Virus, Host Based Intrusion Detection System or Endpoint Detection and Reponse software 
   - **Why It Works**: These softwares can detect, notify and prevent malicious processes running on a system
+Malicious Processes
+  - **Patch**: System Hardening
+    - Add security and monitoring software to system, such as: Anti-Virus, Host Based Intrusion Detection System or Endpoint Detection and Reponse software
+  - **Why It Works**: These softwares can detect, notify and prevent malicious processes running on a system
 
