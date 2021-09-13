@@ -52,7 +52,7 @@ HTTP Request Size Monitor is implemented as follows:
   - **Metric**: `WHEN sum() of http.request.bytes OVER all documents IS ABOVE 3500 FOR THE LAST 1 minute`
   - **Threshold**: Above 3500
   - **Vulnerability Mitigated**: Enumeration / Brute Force Attack / DDoS 
-  - **Reliability**: Low Reliability - false positives are possible since there can be legitimate larger requests
+  - **Reliability**: Medium Reliability - false positives are possible since there can be legitimate larger requests
 
 ### CPU Usage Monitor
 CPU Usage Monitor is implemented as follows:
