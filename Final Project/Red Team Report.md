@@ -98,7 +98,7 @@ $ grep -rnw / -e “flag1” 2> /dev/null
 $ find / -iname “flag2*” 2> /dev/null
 ```
 ```
-cat /var/www/flag2.txt
+$ cat /var/www/flag2.txt
 ```
 ![flag2](images/flag2.png)
 
