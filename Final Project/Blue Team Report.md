@@ -91,7 +91,7 @@ The logs and alerts generated during the assessment suggest that this network is
   - **Why It Works**:
     1. Stronger password requirements make guessing the correct password much harder/longer. In addition not being listed in a readily available wordlist would increase security
     2. A brute force attack requires a target. If the attacker cannot find the login page then the attack cannot begin
-    3. Added Two-factor Authentication would add an additional layer of security that an attacker would have low chance of bypassing
+    3. Added Two-factor Authentication would add an additional layer of security
     4. Limiting the login attempts by IP would prevent any tools from attempting a brute force attack because the IP would not be allowed to submit more than the set number of attempts
     5. XML-RPC allows for users to remotely post, edit or delete content from the site which can be used to brute force login credentials. 
 - Enumeration
